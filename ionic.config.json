@@ -1,0 +1,7 @@
+{
+  "name": "rajagiriMobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

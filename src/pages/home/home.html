@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      RAJAGIRI
+    </ion-title>
+    <ion-buttons end> <button ion-button clear (click)="logout()">Logout</button></ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list >
+    <ion-list-header>
+      School Notifications
+      <button round clear ion-button style="float:right;"(click)="toggleSchool()">
+        <ion-icon *ngIf="schoolExpand === false" name="add" ></ion-icon>
+        <ion-icon *ngIf="schoolExpand === true" name="remove"></ion-icon>
+      </button>
+
+    </ion-list-header>
+    <span *ngIf="schoolExpand === true">
+    <ion-item *ngFor = "let item of schoolNotifications" class="message-item">
+     <span style="font-weight:bold;">{{item.createdAt | date : "dd/mm/yyyy"}} </span>  - {{item.notification}} 
+      <!-- <button ion-button clear round (click)="toggleSchoolItem(item)" style="float:right;">
+          <ion-icon *ngIf="item.expand === true" name="arrow-up"></ion-icon>
+          <ion-icon  *ngIf="item.expand === false" name="arrow-down"></ion-icon>
+      </button>
+      <div *ngIf="item.expand === true" style="padding-top:10px;">
+
+        
+      </div> -->
+      
+    </ion-item>
+    </span>
+
+  </ion-list>
+  
+</ion-content>
