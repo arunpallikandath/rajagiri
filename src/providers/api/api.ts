@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
-import { resolve } from 'dns';
-
 
 
 /*
@@ -32,7 +30,7 @@ export class ApiProvider {
    
   
       console.log(this.reqOptions);
-      this.http.get('http://localhost:3000/api/v1/notifications',options).subscribe(data => {
+      this.http.get('http://ec2-18-222-203-228.us-east-2.compute.amazonaws.com:3000/api/v1/notifications',options).subscribe(data => {
         console.log(data)
   
         resolve(data);
@@ -52,7 +50,7 @@ export class ApiProvider {
       })
       let options = new RequestOptions({headers: header})
   
-      this.http.get('http://localhost:3000/api/v1/parents',options).subscribe(data => {
+      this.http.get('http://ec2-18-222-203-228.us-east-2.compute.amazonaws.com:3000/api/v1/parents',options).subscribe(data => {
         console.log(data)
   
         resolve(data);
